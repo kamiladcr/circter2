@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIRCTER2</title>
+    <style>
+     body {
+       margin: 0;
+       padding: 0;
+       background-color: white;
+       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+     }
+     .maps-wrapper {
+       display: grid;
+       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+       gap: 5px;
+       padding: 10px;
+     }
+     .map-wrapper {
+       display: flex;
+       justify-content: center;
+       align-items: center;
+     }
+     .map-image {
+       max-width: 90%;
+       height: auto;
+     }
+    </style>
+  </head>
+  <body>
+    <!-- <p> Circular economy indicators, CIRCTER2 project </p> -->
+    <div class="maps-wrapper"></div>
+
+    <script>
+     const mapsWrapper = document.querySelector(".maps-wrapper");
+
+     const imagesSources = [
+       "CE_clusters.png",
+       "CFI_CHANGE_2017_2022.png", 
+       "CFI_CHANGE_ABS_2017_2022.png",
+       "CFI_POP_2022.png", 
+       "DE_CHANGE_2014_2022.png", 
+       "DE_DMC_2022.png", 
+       "DE_POP_2022.png", 
+       "DMC_CHANGE_2014_2022.png", 
+       "DMC_GDP_decoupling_14_22.png", 
+       "DMC_GHG_trends_14_22.png", 
+       "DMC_POP_2022.png", 
+       "DMC_POP_2022_rural.png", 
+       "FOOD_WAS_POP_2022.png", 
+       "GDP_DMC_2022.png", 
+       "GDP_DMC_2022_rural.png", 
+       "GDP_DMC_CHANGE_2014_2022.png", 
+       "GHG_2022.png", 
+       "HH_WAS_2014_2022.png",
+       "HH_WAS_GEN_POP_2022.png", 
+       "MF_CHANGE_2014_2022.png", 
+       "MF_DMC_2022.png", 
+       "MF_POP_ 2022.png", 
+       "MF_POP_ 2022_rural.png", 
+       "MUN_WAS_CHANGE_14_22.png", 
+       "MUN_WAS_POP_2022.png", 
+       "MUN_WAS_POP_2022_rural.png", 
+       "TOT_WAS_CHANGE_2014_2022.png",
+       "TOT_WAS_GDP_2022.png", 
+       "TOT_WAS_GDP_CHANGE_14_22.png",
+       "WAS_GEN_POP_2022.png", 
+     ];
+
+     mapsWrapper.innerHTML = imagesSources
+       .map(
+         (imagesSource) => `
+          <div class="map-wrapper">
+            <img class="map-image" src="images/${imagesSource}" alt="${imagesSource}" />
+          </div>
+         `
+       )
+       .join("");
+    </script>
+  </body>
+</html>
